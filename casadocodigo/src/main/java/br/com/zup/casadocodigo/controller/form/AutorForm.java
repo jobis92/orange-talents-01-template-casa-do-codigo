@@ -6,7 +6,6 @@ import javax.validation.constraints.Size;
 
 import br.com.zup.casadocodigo.modelo.Autor;
 
-
 public class AutorForm {
 
 	@NotBlank
@@ -22,7 +21,7 @@ public class AutorForm {
 
 	public AutorForm(@NotBlank String nome, @Email @NotBlank String email,
 			@NotBlank @Size(max = 400) String descricao) {
-		super();
+
 		this.nome = nome;
 		this.email = email;
 		this.descricao = descricao;
@@ -34,9 +33,8 @@ public class AutorForm {
 	}
 
 	public String getEmail() {
-		
+
 		return this.email;
 	}
-
 
 }
