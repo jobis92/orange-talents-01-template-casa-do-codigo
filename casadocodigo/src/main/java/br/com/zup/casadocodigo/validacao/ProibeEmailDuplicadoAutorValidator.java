@@ -17,6 +17,10 @@ public class ProibeEmailDuplicadoAutorValidator implements Validator {
 	@Autowired
 	private AutorRepository autorRepository;
 
+	public ProibeEmailDuplicadoAutorValidator(AutorRepository autorRepository) {
+		this.autorRepository = autorRepository;
+	}
+
 	@Override
 	public boolean supports(Class<?> clazz) {
 
@@ -30,7 +34,7 @@ public class ProibeEmailDuplicadoAutorValidator implements Validator {
 		}
 		AutorForm request = (AutorForm) target;
 		Optional<Autor> emails = autorRepository.findByEmail(request.getEmail());
-		
+
 		if (emails.isPresent()) {
 			errors.rejectValue("email", null, "Email já cadastrado! " + request.getEmail());
 		} else {
