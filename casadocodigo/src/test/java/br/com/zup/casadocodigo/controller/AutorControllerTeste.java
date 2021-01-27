@@ -18,7 +18,6 @@ import org.springframework.validation.Errors;
 import br.com.zup.casadocodigo.controller.form.AutorForm;
 import br.com.zup.casadocodigo.modelo.Autor;
 import br.com.zup.casadocodigo.repository.AutorRepository;
-import br.com.zup.casadocodigo.validacao.ProibeEmailDuplicadoAutorValidator;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -29,12 +28,12 @@ public class AutorControllerTeste {
 	@MethodSource("geradorTeste1")
 	void validaEmailDuplicadoTeste(Optional<Autor> possivelAutor, boolean esperado) {
 		AutorRepository autorRepository = Mockito.mock(AutorRepository.class);
-		ProibeEmailDuplicadoAutorValidator validator = new ProibeEmailDuplicadoAutorValidator(autorRepository);
+		// UniqueValueValidator validator = new UniqueValueValidator(autorRepository);
 		Object target = new AutorForm("joao", "joao@hotmail.com", "teste");
 		Errors errors = new BeanPropertyBindingResult(target, "teste");
 		Mockito.when(autorRepository.findByEmail("joao@hotmail.com")).thenReturn(possivelAutor);
 
-		validator.validate(target, errors);
+		// validator.validate(target, errors);
 
 		Assertions.assertEquals(esperado, errors.hasFieldErrors("email"));
 	}
