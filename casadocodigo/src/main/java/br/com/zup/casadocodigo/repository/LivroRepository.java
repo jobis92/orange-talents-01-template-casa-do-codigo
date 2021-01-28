@@ -1,9 +1,9 @@
 package br.com.zup.casadocodigo.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.zup.casadocodigo.modelo.Livro;
 
-public interface LivroRepository extends CrudRepository<Livro, Long> {
+public interface LivroRepository extends JpaRepository<Livro, Long> {
 
 }

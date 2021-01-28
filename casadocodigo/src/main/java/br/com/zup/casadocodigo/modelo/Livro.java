@@ -73,11 +73,26 @@ public class Livro {
 
 	}
 
+	@Deprecated
+	public Livro() {
+
+	}
+
 	@Override
 	public String toString() {
 		return "Livro [id=" + id + ", titulo=" + titulo + ", resumo=" + resumo + ", sumario=" + sumario + ", preco="
 				+ preco + ", numeroPaginas=" + numeroPaginas + ", isbn=" + isbn + ", dataPublicacao=" + dataPublicacao
 				+ ", autor=" + autor + ", categoria=" + categoria + "]";
+	}
+
+	public Long getId() {
+
+		return id;
+	}
+
+	public String getTitulo() {
+
+		return titulo;
 	}
 
 }
