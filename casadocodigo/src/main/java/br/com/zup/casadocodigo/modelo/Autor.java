@@ -47,4 +47,14 @@ public class Autor {
 				+ ", dataCadastro=" + dataCadastro + "]";
 	}
 
+	public String getNome() {
+		return this.nome;
+
+	}
+
+	public String getDescricao() {
+		return this.descricao;
+
+	}
+
 }
