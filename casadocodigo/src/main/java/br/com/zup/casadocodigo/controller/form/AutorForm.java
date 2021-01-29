@@ -14,7 +14,7 @@ public class AutorForm {
 
 	@Email
 	@NotBlank
-	@UniqueValue(domainClass = Autor.class, fieldName = "email", message = "Email ja cadastrado!")
+	@UniqueValue(domainClass = Autor.class, fieldName = "email", message = "Email já cadastrado!")
 	private String email;
 
 	@NotBlank

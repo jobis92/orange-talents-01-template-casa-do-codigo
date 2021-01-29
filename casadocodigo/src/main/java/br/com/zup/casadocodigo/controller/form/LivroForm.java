@@ -21,7 +21,7 @@ import br.com.zup.casadocodigo.validacao.UniqueValue;
 public class LivroForm {
 
 	@NotBlank
-	@UniqueValue(domainClass = Livro.class, fieldName = "titulo", message = "Titulo do livro ja cadastrado!")
+	@UniqueValue(domainClass = Livro.class, fieldName = "titulo", message = "Titulo do livro já cadastrado!")
 	private String titulo;
 
 	@NotBlank
