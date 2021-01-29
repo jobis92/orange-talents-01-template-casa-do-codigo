@@ -24,6 +24,11 @@ public class Estado {
 	@ManyToOne
 	private Pais pais;
 
+	@Deprecated
+	public Estado() {
+
+	}
+
 	public Estado(@NotBlank String nome, @Valid @NotNull Pais pais) {
 		this.nome = nome;
 		this.pais = pais;
@@ -32,6 +37,11 @@ public class Estado {
 	@Override
 	public String toString() {
 		return "Estado [nome=" + nome + ", pais=" + pais + "]";
+	}
+
+	public boolean pertenceAPais(Pais pais) {
+		//
+		return this.pais.equals(pais);
 	}
 
 }

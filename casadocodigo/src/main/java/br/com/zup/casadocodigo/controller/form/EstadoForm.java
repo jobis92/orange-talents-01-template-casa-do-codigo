@@ -6,6 +6,7 @@ import javax.validation.constraints.NotNull;
 
 import br.com.zup.casadocodigo.modelo.Estado;
 import br.com.zup.casadocodigo.modelo.Pais;
+import br.com.zup.casadocodigo.validacao.ExistsId;
 import br.com.zup.casadocodigo.validacao.UniqueValue;
 
 public class EstadoForm {
@@ -15,6 +16,7 @@ public class EstadoForm {
 	private String nome;
 
 	@NotNull
+	@ExistsId(domainClass = Pais.class, fieldName = "id")
 	private Long idPais;
 
 	public EstadoForm(@NotBlank String nome, @NotNull Long idPais) {
